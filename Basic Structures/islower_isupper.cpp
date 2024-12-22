@@ -6,7 +6,7 @@ int main() {
 int lower_count = 0;
 int upper_count = 0;
 string my_string = "Roses are Red, Violets are Blue";
-for (char ch : my_string){
+for (char ch : my_string){ // ch represents each character of my_string from left to right.
   if (islower(ch)) {
   lower_count += 1;
   }
