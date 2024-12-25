@@ -13,6 +13,7 @@ Order of preference:
 3. Or
 */
 #include <iostream>
+using namespace std;
 
 int main() {
     bool a = false;
@@ -26,6 +27,9 @@ int main() {
     // With parentheses for clarity
     bool resultWithParentheses = (!a && b) || c;
     std::cout << "Result with parentheses: " << resultWithParentheses << std::endl;
+
+    bool z = (true||false);
+    cout << z;
 
     return 0;
 }
