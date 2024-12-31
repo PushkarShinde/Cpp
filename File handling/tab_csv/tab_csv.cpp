@@ -2,9 +2,9 @@
 using namespace std;
 
 int main() {
-    string path = "./homeruns.csv";
+    
     vector<string> data;
-
+    string path ="./tab.csv";   
     try {
         ifstream file;
         string read;
@@ -14,26 +14,25 @@ int main() {
         }
         while (getline(file, read)) {
             stringstream ss(read);
-            while (getline(ss, read, ',')) {
+            while (getline(ss, read, '\t')) {
                 data.push_back(read);
             }
         }
         file.close();
-        for (int i = 0; i < data.size(); i++) {
-            if (i % 3 == 0) {
-                cout << setw(20) << left << data.at(i);
-            }
-            else if (i % 3 == 1) {
-                cout << setw(15) << left << data.at(i);
-            }
-            else {
-                cout << data.at(i) << endl;
-            }
-        }
     }
     
     catch (exception& e) {
         cerr << e.what() << endl;
     }
+    int max=-1; // Start with a very small age
+    string name;
+    for (size_t i = 1; i < data.size(); i += 3) {
+        int age = stoi(data[i]); // Convert the age to an integer
+        if (age >= max) {
+            max = age;
+            name = data[i - 1]; // Name is stored just before the age
+        }
+    }
+    cout << "The oldest person is "<< name<<".";
     return 0;
 }
