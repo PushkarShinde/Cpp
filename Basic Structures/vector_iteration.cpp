@@ -14,9 +14,19 @@ int main(){
     }
 
     //iterating a vector with Enhanced For Loop
-    vector<int> grades{85, 95, 48, 100, 92};
-
     for (auto i : grades) { //can use int or auto for iterating variable!
     cout << i << " ";
+    }
+
+    // iterating a vector with iterator pointer
+    vector<int>::iterator it;
+    for(it=grades.begin();it!=grades.end();it++){ // iterator pointer!
+        cout << *it<< " ";
+    }
+
+    // iterating a vector in reverse
+    vector<int>::reverse_iterator ite;
+    for(auto ite=grades.rbegin(); ite!=grades.rend();it++){
+        cout << *it<< " ";
     }
 }
